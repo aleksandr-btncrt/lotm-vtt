@@ -43,7 +43,7 @@ export class LotmItemSheet extends ItemSheet {
     const context = super.getData();
 
     // Use a safe clone of the item data for further operations.
-    const itemData = this.document.toObject(false);
+    const itemData = this.document.toPlainObject();
 
     // Enrich description info for display
     // Enrichment turns text like `[[/r 1d20]]` into buttons
@@ -65,8 +65,8 @@ export class LotmItemSheet extends ItemSheet {
     context.system = itemData.system;
     context.flags = itemData.flags;
 
-    // Adding a pointer to CONFIG.lotm
-    context.config = CONFIG.lotm;
+    // Adding a pointer to CONFIG.LOTM
+    context.config = CONFIG.LOTM;
 
     // Prepare active effects for easier access
     context.effects = prepareActiveEffectCategories(this.item.effects);

@@ -6,7 +6,9 @@ import { LotmActorSheet } from './sheets/actor-sheet.mjs';
 import { LotmItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { lotm } from './helpers/config.mjs';
+import { LOTM } from './helpers/config.mjs';
+// Import DataModel classes
+import * as models from './data/_module.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -22,7 +24,7 @@ Hooks.once('init', function () {
   };
 
   // Add custom constants for configuration.
-  CONFIG.lotm = lotm;
+  CONFIG.LOTM = LOTM;
 
   /**
    * Set an initiative formula for the system
@@ -33,9 +35,22 @@ Hooks.once('init', function () {
     decimals: 2,
   };
 
-  // Define custom Document classes
+  // Define custom Document and DataModel classes
   CONFIG.Actor.documentClass = LotmActor;
+
+  // Note that you don't need to declare a DataModel
+  // for the base actor/item classes - they are included
+  // with the Character/NPC as part of super.defineSchema()
+  CONFIG.Actor.dataModels = {
+    character: models.LotmCharacter,
+    npc: models.LotmNPC
+  }
   CONFIG.Item.documentClass = LotmItem;
+  CONFIG.Item.dataModels = {
+    item: models.LotmItem,
+    feature: models.LotmFeature,
+    spell: models.LotmSpell
+  }
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
@@ -46,12 +61,12 @@ Hooks.once('init', function () {
   Actors.unregisterSheet('core', ActorSheet);
   Actors.registerSheet('lotm', LotmActorSheet, {
     makeDefault: true,
-    label: 'lotm.SheetLabels.Actor',
+    label: 'LOTM.SheetLabels.Actor',
   });
   Items.unregisterSheet('core', ItemSheet);
   Items.registerSheet('lotm', LotmItemSheet, {
     makeDefault: true,
-    label: 'lotm.SheetLabels.Item',
+    label: 'LOTM.SheetLabels.Item',
   });
 
   // Preload Handlebars templates.

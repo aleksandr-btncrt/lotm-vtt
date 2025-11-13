@@ -18,7 +18,7 @@
     }
   ],
   "esmodules": [
-    "lotm.mjs"
+    "module/lotm.mjs"
   ],
   "styles": [
     "lotm.css"

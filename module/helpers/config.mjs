@@ -1,23 +1,27 @@
-export const BOILERPLATE = {};
+export const LOTM = {};
 
 /**
  * The set of Ability Scores used within the system.
  * @type {Object}
  */
 LOTM.abilities = {
-  str: 'BOILERPLATE.Ability.Str.long',
-  dex: 'BOILERPLATE.Ability.Dex.long',
-  con: 'BOILERPLATE.Ability.Con.long',
-  int: 'BOILERPLATE.Ability.Int.long',
-  wis: 'BOILERPLATE.Ability.Wis.long',
-  cha: 'BOILERPLATE.Ability.Cha.long',
+  cha: 'LOTM.Ability.Cha.long',
+  str: 'LOTM.Ability.Str.long',
+  lck: 'LOTM.Ability.Lck.long',
+  agi: 'LOTM.Ability.Agi.long',
+  psy: 'LOTM.Ability.Psy.long',
+  wll: 'LOTM.Ability.Wll.long',
+  ins: 'LOTM.Ability.Ins.long',
+  edu: 'LOTM.Ability.Edu.long'
 };
 
 LOTM.abilityAbbreviations = {
-  str: 'BOILERPLATE.Ability.Str.abbr',
-  dex: 'BOILERPLATE.Ability.Dex.abbr',
-  con: 'BOILERPLATE.Ability.Con.abbr',
-  int: 'BOILERPLATE.Ability.Int.abbr',
-  wis: 'BOILERPLATE.Ability.Wis.abbr',
-  cha: 'BOILERPLATE.Ability.Cha.abbr',
+  cha: 'LOTM.Ability.Cha.abbr',
+  str: 'LOTM.Ability.Str.abbr',
+  lck: 'LOTM.Ability.Lck.abbr',
+  agi: 'LOTM.Ability.Agi.abbr',
+  psy: 'LOTM.Ability.Psy.abbr',
+  wll: 'LOTM.Ability.Wll.abbr',
+  ins: 'LOTM.Ability.Ins.abbr',
+  edu: 'LOTM.Ability.Edu.abbr'
 };

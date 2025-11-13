@@ -40,14 +40,14 @@ export class LotmActorSheet extends ActorSheet {
     const context = super.getData();
 
     // Use a safe clone of the actor data for further operations.
-    const actorData = this.document.toObject(false);
+    const actorData = this.document.toPlainObject();
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
 
-    // Adding a pointer to CONFIG.lotm
-    context.config = CONFIG.lotm;
+    // Adding a pointer to CONFIG.LOTM
+    context.config = CONFIG.LOTM;
 
     // Prepare character data and items.
     if (actorData.type == 'character') {
