@@ -8,6 +8,7 @@ const { loadTemplates } = foundry.applications.handlebars;
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
+    'systems/lotm/templates/actor/parts/actor-pathway.hbs',
     'systems/lotm/templates/actor/parts/actor-features.hbs',
     'systems/lotm/templates/actor/parts/actor-items.hbs',
     'systems/lotm/templates/actor/parts/actor-spells.hbs',

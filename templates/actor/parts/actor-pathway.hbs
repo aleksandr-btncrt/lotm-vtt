@@ -1,0 +1,29 @@
+<div class="grid">
+
+  <div class="resources grid grid-3col">
+    <div class="resource flex-group-center">
+      <div class="resource-content flexrow flex-center flex-between">
+        <img src="systems/lotm/assets/pathways/{{system.path.value}}.webp" title="{{system.path.value}}">
+        <div>
+          {{system.grade.value}}
+        </div>
+      </div>
+    </div>
+    <div class="resource flex-group-center">
+      <label for="system.path.value" class="resource-label">Path</label>
+      <div class="resource-content flexrow flex-center flex-between">
+        <select name="system.path.value">
+          {{selectOptions config.pathways selected=system.path.value valueAttr="key" labelAttr="name"}}
+        </select>
+      </div>
+    </div>
+    <div class="resource flex-group-center">
+      <label for="system.sequence.value" class="resource-label">Sequence</label>
+      <div class="resource-content flexrow flex-center flex-between">
+        <select name="system.sequence.value">
+          {{selectOptions config.sequences selected=system.sequence.value valueAttr="key" labelAttr="name"}}
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

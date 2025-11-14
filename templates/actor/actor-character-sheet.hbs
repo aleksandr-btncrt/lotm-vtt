@@ -5,11 +5,18 @@
     <img class="profile-img" src="{{actor.img}}" title="{{actor.name}}" height="100" width="100" data-edit="img" />
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+      <div>
+        <input type="checkbox" class="toggle-pill" name="system.isBeyonder.value" {{checked system.isBeyonder.value}}>
+        <label class="toogle-label" for="system.isBeyonder.value">Beyonder</label>
+      </div>
   </header>
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="character">Character</a>
+    {{#if system.isBeyonder.value}}
+    <a class="item" data-tab="pathway">Pathway</a>
+    {{/if}}
     <a class="item" data-tab="features">Features</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
@@ -24,6 +31,13 @@
     <div class="tab character" data-group="primary" data-tab="character">
       {{> "systems/lotm/templates/actor/parts/actor-character.hbs"}}
     </div>
+
+    {{#if system.isBeyonder.value}}
+    {{!-- Pathway Info --}}
+    <div class="tab pathway" data-group="primary" data-tab="pathway">
+      {{> "systems/lotm/templates/actor/parts/actor-pathway.hbs"}}
+    </div>
+    {{/if}}
 
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
