@@ -1,8 +1,4 @@
-const LordOfMysteries = [
-  { name: "Fool", key: "fool" },
-  { name: "Error", key: "error" },
-  { name: "Door", key: "door" }
-]
+import { lordOfMysteries } from './lotm.mjs';
 
 const GodAlmighty = [
   { name: "Visionary", key: "visionary" },
@@ -47,8 +43,8 @@ const TheAnarchy = [
   { name: "Justiciar", key: "justiciar" }
 ]
 
-export const Pathways = [
-  ...LordOfMysteries,
+export const pathways = [
+  ...lordOfMysteries,
   ...CalamityOfDestruction,
   ...DemonKnowledge,
   ...EternalDarkness,
@@ -59,15 +55,15 @@ export const Pathways = [
   ...TheAnarchy,
 ]
 
-export const sequence = [
-  9,
-  8,
-  7,
-  6,
-  5,
-  4,
-  3,
-  2,
-  1,
-  0
+export const sequences = [
+  {name: "9", key: 9},
+  {name: "8", key: 8},
+  {name: "7", key: 7},
+  {name: "6", key: 6},
+  {name: "5", key: 5},
+  {name: "4", key: 4},
+  {name: "3", key: 3},
+  {name: "2", key: 2},
+  {name: "1", key: 1},
+  {name: "0", key: 0}
 ]

@@ -1,4 +1,4 @@
-import { Pathways } from "../pathways/index.mjs"
+import { pathways, sequences } from "../pathways/index.mjs"
 export const LOTM = {};
 /**
  * The set of Ability Scores used within the system.
@@ -26,4 +26,5 @@ LOTM.abilityAbbreviations = {
   edu: 'LOTM.Ability.Edu.abbr'
 };
 
-LOTM.pathways = Pathways
+LOTM.pathways = pathways
+LOTM.sequences = sequences

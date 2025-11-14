@@ -59,7 +59,9 @@
         <div class="resource flex-group-center">
           <label for="system.sequence.value" class="resource-label">Sequence</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.sequence.value" value="{{system.sequence.value}}" data-dtype="Number">
+            <select name="system.sequence.value">
+            {{selectOptions config.sequences selected=system.sequence.value valueAttr="key" labelAttr="name"}}
+            </select>
           </div>
         </div>
       </div>

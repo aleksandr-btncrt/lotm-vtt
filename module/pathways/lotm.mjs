@@ -38,5 +38,10 @@ export const foolPathway = [
   {
     "name": "Fool",
     "sequence": 0
-  }
+  }]
+
+export const lordOfMysteries = [
+  { name: "Fool", key: "fool" },
+  { name: "Error", key: "error" },
+  { name: "Door", key: "door" }
 ]
