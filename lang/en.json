@@ -1,5 +1,29 @@
 {
   "LOTM": {
+    "Pathways": {
+      "Visionary": "Visionary",
+      "Sun": "Sun",
+      "Tyrant": "Tyrant",
+      "White-Tower": "White Tower",
+      "Hanged-Man": "HangedMan",
+      "Darkness": "Darkness",
+      "Death": "Death",
+      "Twilight-Giant": "Twilight Giant",
+      "Demoness": "Demoness",
+      "Red-Priest": "Red Priest",
+      "Hermit": "Hermit",
+      "Paragon": "Paragon",
+      "Wheel-of-Fortune": "Wheel of Fortune",
+      "Mother": "Mother",
+      "Moon": "Moon",
+      "Abyss": "Abyss",
+      "Chained": "Chained",
+      "Black-Emperor": "Black Emperor",
+      "Justiciar": "Justiciar",
+      "Fool": "Fool",
+      "Door": "Door",
+      "Error": "Error"
+    },
     "Ability": {
       "Str": { "long": "Strength", "abbr": "str" },
       "Wll": { "long": "Will", "abbr": "wll" },

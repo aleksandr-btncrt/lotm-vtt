@@ -12,6 +12,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/lotm/templates/actor/parts/actor-items.hbs',
     'systems/lotm/templates/actor/parts/actor-spells.hbs',
     'systems/lotm/templates/actor/parts/actor-effects.hbs',
+    'systems/lotm/templates/actor/parts/actor-character.hbs',
     // Item partials
     'systems/lotm/templates/item/parts/item-effects.hbs',
   ]);
