@@ -10,6 +10,26 @@ import { LOTM } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 
+import { ClasslessSkillTree5E } from "./data/skilltree/_module.mjs";
+import { RequiredSkill } from "./data/skilltree/RequiredSkill.mjs";
+import { SkillNode } from "./data/skilltree/SkillNode.mjs";
+import { SkillRequirement } from "./data/skilltree/SkillRequirement.mjs";
+import { SkillTree } from "./data/skilltree/SkillTree.mjs";
+import { SkillTreeUtils } from "./data/skilltree/SkillTreeUtils.mjs";
+
+import { foolPathway } from './pathways/fool.mjs'
+
+const Actors = foundry.documents.collections.Actors;
+const ActorSheet = foundry.appv1.sheets.ActorSheet;
+const Items = foundry.documents.collections.Items;
+const ItemSheet = foundry.appv1.sheets.ItemSheet;
+
+
+Hooks.once("devModeReady", ({ registerPackageDebugFlag }) => {
+  SkillTreeUtils.log(false, "Dev Mode Ready");
+  registerPackageDebugFlag(ClasslessSkillTree5E.ID);
+});
+
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
@@ -17,6 +37,7 @@ import * as models from './data/_module.mjs';
 Hooks.once('init', function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
+  SkillTreeUtils.log(false, "Main Initialized!");
   game.lotm = {
     LotmActor,
     LotmItem,
@@ -89,6 +110,7 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 Hooks.once('ready', function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+  setupSkillTree()
 });
 
 /* -------------------------------------------- */
@@ -155,4 +177,39 @@ function rollItemMacro(itemUuid) {
     // Trigger the item roll
     item.roll();
   });
+}
+
+function setupSkillTree() {
+  const nodes = [];
+  for (let index = 0; index < foolPathway.length; index++) {
+    const element = foolPathway[index]
+    let node;
+    if(index === 0){
+      node = new SkillNode(`${element.name}-${element.sequence}`,element.name, "", "", 0, 0, [])
+    }
+    if(index>0 && index<10){
+      node = new SkillNode(`${element.name}-${element.sequence}`, element.name, "", "", 0, 1, [new SkillRequirement([
+        new RequiredSkill(nodes[index-1], 1, "<="), 
+      ], "AND")])
+    }
+    if(index === 10){
+      node = new SkillNode(`${element.name}-${element.sequence}`,element.name, "", "", 0, 0, [])
+    }
+    nodes.push(node)
+    console.log(node);
+  }
+
+  const testSkillTree = new SkillTree(
+    "Fool",
+    "This is a test to see if the Skill Tree class works.",
+    nodes
+  );
+
+  const errorMessages = testSkillTree.validateTree();
+  if (errorMessages.length > 0) {
+    SkillTreeUtils.log(false, "Errors found in the Skill Tree:");
+    errorMessages.forEach((errorMsg) => {
+      console.warn(`CST5E | ${errorMsg}`);
+    });
+  }
 }

@@ -3,6 +3,9 @@ import {
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
 
+
+const ActorSheet = foundry.appv1.sheets.ActorSheet
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -38,12 +41,13 @@ export class LotmActorSheet extends ActorSheet {
     // sheets are the actor object, the data object, whether or not it's
     // editable, the items array, and the effects array.
     const context = super.getData();
+    console.log("context", context)
 
     // Use a safe clone of the actor data for further operations.
     const actorData = this.document.toPlainObject();
-
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
+    console.log("ActorData", actorData);
     context.flags = actorData.flags;
 
     // Adding a pointer to CONFIG.LOTM
@@ -62,13 +66,11 @@ export class LotmActorSheet extends ActorSheet {
 
     // Enrich biography info for display
     // Enrichment turns text like `[[/r 1d20]]` into buttons
-    context.enrichedBiography = await TextEditor.enrichHTML(
+    context.enrichedBiography = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       this.actor.system.biography,
       {
         // Whether to show secret blocks in the finished html
         secrets: this.document.isOwner,
-        // Necessary in v11, can be removed in v12
-        async: true,
         // Data to fill in for inline rolls
         rollData: this.actor.getRollData(),
         // Relative UUID resolution
@@ -94,6 +96,7 @@ export class LotmActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // This is where you can enrich character-specific editor fields
     // or setup anything else that's specific to this type
+    console.log("_prepareCharacterData", context);
   }
 
   /**

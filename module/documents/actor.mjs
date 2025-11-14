@@ -54,6 +54,8 @@ export class LotmActor extends Actor {
   toPlainObject() {
     const result = {...this};
 
+    console.log("LotmActor.toPlainObject", result);
+
     // Simplify system data.
     result.system = this.system.toPlainObject();
 

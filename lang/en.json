@@ -1,0 +1,43 @@
+{
+  "LOTM": {
+    "Ability": {
+      "Str": { "long": "Strength", "abbr": "str" },
+      "Wll": { "long": "Will", "abbr": "wll" },
+      "Phy": { "long": "Physique", "abbr": "phy" },
+      "Agi": { "long": "Agility", "abbr": "agi" },
+      "Lck": { "long": "Luck", "abbr": "lck" },
+      "Cha": { "long": "Charisma", "abbr": "cha" },
+      "Ins": { "long": "Inspiration", "abbr": "ins"},
+      "Edu": { "long": "Education", "abbr": "Edu"}
+    },
+    "SheetLabels": {
+      "Actor": "LOTM Actor Sheet",
+      "Item": "LOTM Item Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "feature": "Feature",
+      "spell": "Spell"
+    }
+  }
+}

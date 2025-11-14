@@ -46,6 +46,7 @@
     "Actor": {
       "character": {
         "htmlFields": ["biography"],
+        "stringFields": ["occupation", "path", "gender"],
         "filePathFields": {
           "crest": ["IMAGE"]
         }
