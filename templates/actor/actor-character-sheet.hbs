@@ -13,11 +13,10 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="character">Character</a>
+    <a class="item" data-tab="features">Features</a>
     {{#if system.isBeyonder.value}}
     <a class="item" data-tab="pathway">Pathway</a>
     {{/if}}
-    <a class="item" data-tab="features">Features</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="spells">Spells</a>
@@ -26,18 +25,6 @@
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-
-    {{!-- Chracter Info --}}
-    <div class="tab character" data-group="primary" data-tab="character">
-      {{> "systems/lotm/templates/actor/parts/actor-character.hbs"}}
-    </div>
-
-    {{#if system.isBeyonder.value}}
-    {{!-- Pathway Info --}}
-    <div class="tab pathway" data-group="primary" data-tab="pathway">
-      {{> "systems/lotm/templates/actor/parts/actor-pathway.hbs"}}
-    </div>
-    {{/if}}
 
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
@@ -72,6 +59,13 @@
 
       </section>
     </div>
+
+    {{#if system.isBeyonder.value}}
+    {{!-- Pathway Info --}}
+    <div class="tab pathway" data-group="primary" data-tab="pathway">
+      {{> "systems/lotm/templates/actor/parts/actor-pathway.hbs"}}
+    </div>
+    {{/if}}
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
