@@ -1,0 +1,56 @@
+{
+  "id": "lotm",
+  "title": "Lord of the Mysteries TTRPG",
+  "description": "A system for playing the first edition of Lord of the Mysteries.",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "13.347",
+    "verified": "13",
+    "maximum": "13"
+  },
+  "url": "https://github.com/aleksandr-btncrt/lotm-vtt",
+  "manifest": "https://github.com/aleksandr-btncrt/lotm-vtt/releases/download/system.json",
+  "download": "https://github.com/aleksandr-btncrt/lotm-vtt/releases/download/v0.0.1/system.zip",
+  "authors": [
+    {
+      "name": "Aleksandr",
+      "url": "https://github.com/aleksandr-btncrt"
+    }
+  ],
+  "esmodules": [
+    "module/lotm.mjs"
+  ],
+  "styles": [
+    "lotm.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "english",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
+  "grid": {
+    "distance": 1,
+    "units": "Meter"
+  },
+  "packs": [
+    {
+      "name": "items",
+      "label": "MyItems",
+      "type": "Item"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": ["biography"],
+        "stringFields": ["occupation", "path", "gender"],
+        "filePathFields": {
+          "crest": ["IMAGE"]
+        }
+      }
+    }
+  }
+}
