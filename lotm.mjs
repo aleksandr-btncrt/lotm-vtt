@@ -1,23 +1,23 @@
 // Import document classes.
-import { LotmActor } from './documents/actor.mjs';
-import { LotmItem } from './documents/item.mjs';
+import { LotmActor } from './src/module/documents/actor.mjs';
+import { LotmItem } from './src/module/documents/item.mjs';
 // Import sheet classes.
-import { LotmActorSheet } from './sheets/actor-sheet.mjs';
-import { LotmItemSheet } from './sheets/item-sheet.mjs';
+import { LotmActorSheet } from './src/module/sheets/actor-sheet.mjs';
+import { LotmItemSheet } from './src/module/sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { LOTM } from './helpers/config.mjs';
+import { preloadHandlebarsTemplates } from './src/module/helpers/templates.mjs';
+import { LOTM } from './src/module/helpers/config.mjs';
 // Import DataModel classes
-import * as models from './data/_module.mjs';
+import * as models from './src/module/data/_module.mjs';
 
-import { ClasslessSkillTree5E } from "./data/skilltree/_module.mjs";
-import { RequiredSkill } from "./data/skilltree/RequiredSkill.mjs";
-import { SkillNode } from "./data/skilltree/SkillNode.mjs";
-import { SkillRequirement } from "./data/skilltree/SkillRequirement.mjs";
-import { SkillTree } from "./data/skilltree/SkillTree.mjs";
-import { SkillTreeUtils } from "./data/skilltree/SkillTreeUtils.mjs";
+import { ClasslessSkillTree5E } from "./src/module/data/skilltree/_module.mjs";
+import { RequiredSkill } from "./src/module/data/skilltree/RequiredSkill.mjs";
+import { SkillNode } from "./src/module/data/skilltree/SkillNode.mjs";
+import { SkillRequirement } from "./src/module/data/skilltree/SkillRequirement.mjs";
+import { SkillTree } from "./src/module/data/skilltree/SkillTree.mjs";
+import { SkillTreeUtils } from "./src/module/data/skilltree/SkillTreeUtils.mjs";
 
-import { foolPathway } from './pathways/lotm.mjs'
+import { foolPathway } from './src/module/pathways/lotm.mjs'
 
 const Actors = foundry.documents.collections.Actors;
 const ActorSheet = foundry.appv1.sheets.ActorSheet;
