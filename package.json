@@ -1,0 +1,24 @@
+{
+  "name": "lotm-vtt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksandr-btncrt/lotm-vtt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksandr-btncrt/lotm-vtt/issues"
+  },
+  "homepage": "https://github.com/aleksandr-btncrt/lotm-vtt#readme",
+  "description": "",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "eslint": "^9.39.1",
+    "rollup": "^4.53.2"
+  }
+}
