@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="toggle-buttons">
+    <label class="toggle-checkbox">
+      <input type="checkbox" data-dtype="Boolean" name="actor.system.editable" {{checked actor.system.editable}}>
+      <span class="checkbox-label">Edit</span>
+    </label>
+    <label class="toggle-checkbox">
+      <input type="checkbox" data-dtype="Boolean" name="actor.system.isBeyonder.value" {{checked actor.system.isBeyonder.value disabled dactor.system.editable}} >
+      <span class="checkbox-label">Beyonder</span>
+    </label>
+  </div>
+
+  {{!-- Name & Pathway - Sequence --}}
+  <h1 class="character-name">{{actor.name}}</h1>
+  {{#if actor.system.isBeyonder.value}}
+  <p class="character-class">{{capitalize actor.system.path.value}} Pathway</p>
+  {{/if}}
+
+</header>
