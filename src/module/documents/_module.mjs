@@ -1,0 +1,1 @@
+export { default as LOTMActorV2 } from "./actor-v2.mjs"
