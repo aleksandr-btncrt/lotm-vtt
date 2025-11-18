@@ -1,8 +1,8 @@
 import generatePathwayTree from "../utils/generate-pathway-tree.mjs"
 
-const paths = ["Visionary", "Sun", "Tyrant", "White Tower", "Hanged Man"]
+const paths = ["Abyss", "Chained"]
 
-export const godAlmighty = paths.reduce((pv, cv)=>{
+export const fatherOfDevils = paths.reduce((pv, cv)=>{
   const loweredKey = cv.toLowerCase()
   const dashedKey = loweredKey.replaceAll(" ", "-")
   pv[`{${loweredKey.toLowerCase()}}`] = {

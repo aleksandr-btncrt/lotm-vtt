@@ -36,6 +36,102 @@
         "7": "Astrologer",
         "8": "Trickmaster",
         "9": "Apprentice"
+      },
+      "visionary": {
+        "0": "Visionary",
+        "1": "Author",
+        "2": "Discerner",
+        "3": "Dream Weaver",
+        "4": "Manipulator",
+        "5": "Dreamwalker",
+        "6": "Hypnotist",
+        "7": "Psychiatrist",
+        "8": "Telepathist",
+        "9": "Spectator"
+      },
+      "sun": {
+        "0": "Sun",
+        "1": "White Angel",
+        "2": "Lightseeker",
+        "3": "Justice Mentor",
+        "4": "Unshadowed",
+        "5": "Prist of Light",
+        "6": "Notary",
+        "7": "Solar High Priest",
+        "8": "Light Suppliant ",
+        "9": "Bard"
+      },
+      "tyrant": {
+        "0": "Tyrant",
+        "1": "Thunder God",
+        "2": "Calamity",
+        "3": "Sea King",
+        "4": "Cataclysmic Interrer",
+        "5": "Ocean Songster",
+        "6": "Wind-Blessed",
+        "7": "Seafarer",
+        "8": "Folk of Rage",
+        "9": "Sailor"
+      },
+      "white-tower": {
+        "0": "White Tower",
+        "1": "Omniscient Eye",
+        "2": "Wisdom Angel",
+        "3": "Cognizer",
+        "4": "Prophet",
+        "5": "Mysticism Magister",
+        "6": "Polymath",
+        "7": "Detective",
+        "8": "Student of Ratiocination",
+        "9": "Reader"
+      },
+      "hanged-man": {
+        "0": "Hanged Man",
+        "1": "Dark Angel",
+        "2": "Profane Presbyter",
+        "3": "Trinity Templar",
+        "4": "Black Knight",
+        "5": "Shepherd",
+        "6": "Rose Bishop",
+        "7": "Shadow Ascetic",
+        "8": "Listener",
+        "9": "Secrets Suppliant"
+      },
+      "darkness": {
+        "0": "Darkness",
+        "1": "Knight of Misfortune",
+        "2": "Servant of Concealment",
+        "3": "Horror Bishop",
+        "4": "Nightwatcher",
+        "5": "Spirit Warlock",
+        "6": "Soul Assurer",
+        "7": "Nightmare",
+        "8": "Midnight Poet",
+        "9": "Sleepless"
+      },
+      "death": {
+        "0": "Death",
+        "1": "Pale Emperor",
+        "2": "Death Consul",
+        "3": "Ferryman",
+        "4": "Undying",
+        "5": "Gatekeeper",
+        "6": "Spirit Guide",
+        "7": "Spirit Medium",
+        "8": "Gravedigger",
+        "9": "Corpse Collector"
+      },
+      "twilight-giant": {
+        "0": "Twilight Giant",
+        "1": "Hand of God",
+        "2": "Glory",
+        "3": "Silver Knight",
+        "4": "Demon Hunter",
+        "5": "Guardian",
+        "6": "Dawn Paladin",
+        "7": "Weapon Master",
+        "8": "Pugilist",
+        "9": "Warrior"
       }
     },
     "Ability": {
