@@ -12,6 +12,30 @@
         "7": "Magician",
         "8": "Clown",
         "9": "Seer"
+      },
+      "error": {
+        "0": "Error",
+        "1": "Worm of Time",
+        "2": "Trojan Horse of Time",
+        "3": "Mentor of Deceit",
+        "4": "Parasite",
+        "5": "Dream Stealer",
+        "6": "Prometheus",
+        "7": "Cryptologist",
+        "8": "Swindler",
+        "9": "Marauder"
+      },
+      "door": {
+        "0": "Door",
+        "1": "Key of Stars",
+        "2": "Planeswalker",
+        "3": "Wanderer",
+        "4": "Secrets Sorcerer",
+        "5": "Traveler",
+        "6": "Scribe",
+        "7": "Astrologer",
+        "8": "Trickmaster",
+        "9": "Apprentice"
       }
     },
     "Ability": {
