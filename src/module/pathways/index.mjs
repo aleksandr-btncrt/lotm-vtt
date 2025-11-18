@@ -43,17 +43,9 @@ const TheAnarchy = [
   { name: "Justiciar", key: "justiciar" }
 ]
 
-export const pathways = [
-  ...lordOfMysteries,
-  ...CalamityOfDestruction,
-  ...DemonKnowledge,
-  ...EternalDarkness,
-  ...FatherOfDevils,
-  ...GodAlmighty,
-  ...GoddesOfOrigin,
-  ...KeyOfLight,
-  ...TheAnarchy,
-]
+export const pathways = {
+  ...lordOfMysteries
+}
 
 export const sequences = [
   {name: "9", key: 9},

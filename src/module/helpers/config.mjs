@@ -27,4 +27,3 @@ LOTM.abilityAbbreviations = {
 };
 
 LOTM.pathways = pathways
-LOTM.sequences = sequences

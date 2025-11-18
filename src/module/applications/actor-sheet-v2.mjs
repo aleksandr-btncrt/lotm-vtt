@@ -68,16 +68,27 @@ export class LotmActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorS
         newContext.tab = context.tab[partId];
         break;
     }
-    console.log("_preparePartContext", {partId, newContext})
     return newContext;
   }
 
   _preprareSummaryDetails(context) {
-    console.log("_preprareSummaryDetails", context);
+    const { config: {
+      LOTM: {pathways}
+    }, system: {
+      editable, abilities, path
+    } } = context
     return {
-      editable: context.actor.system.editable,
-      abilities: context.actor.system.abilities,
-      pathway: context.actor.system.pathway
+      editable,
+      abilities,
+      path,
+      selectedPath: path && path.name && path.name != "" ? Object.keys(pathways[path.name]?.tree).reduce((pv, ac)=>{
+        const {name, sequence} = pathways[path.name]?.tree[ac]
+        pv[ac] = {
+          name: game.i18n.localize(name),
+          sequence: `${sequence}`
+        }
+        return pv;
+      }, {}) : {}
     }
   }
 
@@ -96,7 +107,7 @@ export class LotmActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorS
    */
   async _processSubmitData(event, form, submitData) {
     const data = await submitData;
-    console.log("_processSubmitData", {event, form, data})
+    console.log("_processSubmitData", { event, form, data })
     const dataWithoutActorPrefix = Object.keys(data).reduce((pv, cv) => {
       pv[cv.replace("actor.", "")] = data[cv]
       return pv

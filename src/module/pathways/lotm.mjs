@@ -1,47 +1,30 @@
-export const foolPathway = [
-  {
-    "name": "Seer",
-    "sequence": 9
-  },
-  {
-    "name": "Clown",
-    "sequence": 8
-  },
-  {
-    "name": "Magician",
-    "sequence": 7
-  },
-  {
-    "name": "Faceless",
-    "sequence": 6
-  },
-  {
-    "name": "Marionettist",
-    "sequence": 5
-  },
-  {
-    "name": "Bizarro Sorcerer",
-    "sequence": 4
-  },
-  {
-    "name": "Scholar of Yore",
-    "sequence": 3
-  },
-  {
-    "name": "Miracle Invoker",
-    "sequence": 2
-  },
-  {
-    "name": "Attendant of Mysteries",
-    "sequence": 1
-  },
-  {
-    "name": "Fool",
-    "sequence": 0
-  }]
+export const foolPathway = {
+  '0': { name: 'LOTM.Pathways.fool.0', sequence: "0" },
+  '1': { name: 'LOTM.Pathways.fool.1', sequence: "1" },
+  '2': { name: 'LOTM.Pathways.fool.2', sequence: "2" },
+  '3': { name: 'LOTM.Pathways.fool.3', sequence: "3" },
+  '4': { name: 'LOTM.Pathways.fool.4', sequence: "4" },
+  '5': { name: 'LOTM.Pathways.fool.5', sequence: "5" },
+  '6': { name: 'LOTM.Pathways.fool.6', sequence: "6" },
+  '7': { name: 'LOTM.Pathways.fool.7', sequence: "7" },
+  '8': { name: 'LOTM.Pathways.fool.8', sequence: "8" },
+  '9': { name: "LOTM.Pathways.fool.9", sequence: "9" }
+}
 
-export const lordOfMysteries = [
-  { name: "Fool", key: "fool" },
-  { name: "Error", key: "error" },
-  { name: "Door", key: "door" }
-]
+export const lordOfMysteries = {
+  fool: {
+    name: 'Fool Pathway',
+    key: 'fool',
+    tree: foolPathway
+  },
+  error: {
+    name: 'Error Pathway',
+    key: 'error',
+    tree: []
+  },
+  door: {
+    name: 'Door Pathway',
+    key: "error",
+    tree: []
+  }
+}

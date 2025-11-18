@@ -3,7 +3,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Agi.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.agi.value" value="{{abilities.agi.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.agi.value" value="{{abilities.agi.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.agi.value}}</>
         {{/if}}
@@ -11,7 +11,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Cha.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.cha.value" value="{{abilities.cha.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.cha.value" value="{{abilities.cha.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.cha.value}}</>
         {{/if}}
@@ -19,7 +19,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Edu.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.edu.value" value="{{abilities.edu.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.edu.value" value="{{abilities.edu.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.edu.value}}</>
         {{/if}}
@@ -27,7 +27,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Ins.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.ins.value" value="{{abilities.ins.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.ins.value" value="{{abilities.ins.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.ins.value}}</>
         {{/if}}
@@ -39,7 +39,15 @@
     <div class="portrait-circle">
       <img src="{{actor.img}}">
     </div>
-    <div class="armor-class">18</div>
+    <div class="sequence-info">
+      {{#if editable}}
+        <select name="system.path.sequence">
+          {{selectOptions selectedPath selected=path.sequence valueAttr="name" labelAttr="name"}}
+        </select>
+      {{else}}
+        <div class="sequence-number">{{path.sequence}}</div>
+      {{/if}}
+    </div>
   </div>
 
   <!-- Right stats -->
@@ -47,7 +55,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Lck.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.lck.value" value="{{abilities.lck.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.lck.value" value="{{abilities.lck.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.lck.value}}</>
         {{/if}}
@@ -55,7 +63,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Phy.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.phy.value" value="{{abilities.phy.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.phy.value" value="{{abilities.phy.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.phy.value}}</>
         {{/if}}
@@ -63,7 +71,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Str.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.str.value" value="{{abilities.str.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.str.value" value="{{abilities.str.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.str.value}}</>
         {{/if}}
@@ -71,7 +79,7 @@
     <div class="stat-box">
       <span class="stat-label">{{localize 'LOTM.Ability.Wll.long'}}</span>
       {{#if editable}}
-      <input type="text" name="actor.system.abilities.wll.value" value="{{abilities.wll.value}}" data-dtype="Number" />
+      <input type="text" name="system.abilities.wll.value" value="{{abilities.wll.value}}" data-dtype="Number" />
       {{else}}
       <span class="stat-value">{{abilities.wll.value}}</>
         {{/if}}

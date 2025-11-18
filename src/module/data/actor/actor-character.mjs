@@ -16,7 +16,7 @@ export default class LotmActorModelV2 extends TypeDataModel {
       }),
       pathway: new SchemaField({
         name: new StringField({ initial: "" }),
-        sequence: new NumberField({ min: 0, max: 9 })
+        sequence: new StringField({ initial: "" })
       }),
       abilities: new SchemaField(Object.keys(CONFIG.LOTM.abilities).reduce((obj, ability) => {
         obj[ability] = new SchemaField({

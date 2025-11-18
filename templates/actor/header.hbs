@@ -5,7 +5,8 @@
       <span class="checkbox-label">Edit</span>
     </label>
     <label class="toggle-checkbox">
-      <input type="checkbox" data-dtype="Boolean" name="actor.system.isBeyonder.value" {{checked actor.system.isBeyonder.value disabled dactor.system.editable}} >
+      <input type="checkbox" data-dtype="Boolean" name="actor.system.isBeyonder.value" {{checked
+        actor.system.isBeyonder.value}}>
       <span class="checkbox-label">Beyonder</span>
     </label>
   </div>
@@ -13,7 +14,13 @@
   {{!-- Name & Pathway - Sequence --}}
   <h1 class="character-name">{{actor.name}}</h1>
   {{#if actor.system.isBeyonder.value}}
-  <p class="character-class">{{capitalize actor.system.path.value}} Pathway</p>
+    {{#if actor.system.editable}}
+    <select name="system.path.name">
+      {{selectOptions config.LOTM.pathways selected=system.path.name valueAttr="key" labelAttr="name"}}
+      </select>
+    {{else}}
+    <p class="character-class">{{capitalize system.path.name}} Pathway</p>
+    {{/if}}
   {{/if}}
 
 </header>
