@@ -10,4 +10,5 @@ export const godAlmighty = paths.reduce((pv, cv)=>{
     key: dashedKey.replaceAll(" ", "-"),
     tree: generatePathwayTree(dashedKey)
   }
+  return pv;
 }, {}) 

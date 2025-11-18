@@ -10,4 +10,5 @@ export const theAnarchy = paths.reduce((pv, cv)=>{
     key: loweredKey,
     tree: generatePathwayTree(loweredKey)
   }
+  return pv;
 }, {}) 

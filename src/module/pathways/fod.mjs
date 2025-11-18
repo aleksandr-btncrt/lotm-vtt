@@ -10,4 +10,5 @@ export const fatherOfDevils = paths.reduce((pv, cv)=>{
     key: dashedKey.replaceAll(" ", "-"),
     tree: generatePathwayTree(dashedKey)
   }
+  return pv;
 }, {}) 
