@@ -5,10 +5,11 @@ const paths = ["Fool", "Error", "Door"]
 
 export const lordOfMysteries = paths.reduce((pv, cv)=>{
   const loweredKey = cv.toLowerCase()
-  pv[`{${loweredKey.toLowerCase()}}`] = {
+  const dashedKey = loweredKey.replace(/ /g, "-")
+  pv[`${dashedKey.toLowerCase()}`] = {
     name: `${cv} Pathway`,
-    key: loweredKey,
-    tree: generatePathwayTree(loweredKey)
+    key: dashedKey,
+    tree: generatePathwayTree(dashedKey)
   }
   return pv;
 }, {}) 

@@ -4,10 +4,10 @@ const paths = ["Visionary", "Sun", "Tyrant", "White Tower", "Hanged Man"]
 
 export const godAlmighty = paths.reduce((pv, cv)=>{
   const loweredKey = cv.toLowerCase()
-  const dashedKey = loweredKey.replaceAll(" ", "-")
-  pv[`{${loweredKey.toLowerCase()}}`] = {
+  const dashedKey = loweredKey.replace(/ /g, "-")
+  pv[`${dashedKey.toLowerCase()}`] = {
     name: `${cv} Pathway`,
-    key: dashedKey.replaceAll(" ", "-"),
+    key: dashedKey,
     tree: generatePathwayTree(dashedKey)
   }
   return pv;

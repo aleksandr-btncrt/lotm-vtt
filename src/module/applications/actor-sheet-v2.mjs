@@ -77,6 +77,7 @@ export class LotmActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorS
     }, system: {
       editable, abilities, path
     } } = context
+    console.log("_preprareSummaryDetails", context);
     return {
       editable,
       abilities,
