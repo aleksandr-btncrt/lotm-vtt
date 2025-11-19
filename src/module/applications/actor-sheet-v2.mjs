@@ -1,4 +1,4 @@
-import { createTabs, createTemplateParts } from "../utils/default-options.mjs";
+import { createTemplateParts } from "../utils/default-options.mjs";
 
 const { api, sheets } = foundry.applications;
 
@@ -9,7 +9,7 @@ export class LotmActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorS
     classes: ["lotm", "character-sheet"],
     position: {
       width: 600,
-      height: 600
+      height: 1000
     },
     form: {
       submitOnChange: true
@@ -18,7 +18,7 @@ export class LotmActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorS
   }
 
   /** @inheritdoc */
-  static TABS = createTabs()
+  static TABS = []
 
   /** @inheritdoc */
   static PARTS = createTemplateParts("actor")
