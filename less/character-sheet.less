@@ -2,7 +2,7 @@
 @color_2: #0d1b2a;
 @color_3: #f0e6d2;
 @color_4: #8b7355;
-@font_family_1: 'Georgia', serif;
+@font_family_1: "Georgia", serif;
 @border_color_1: #228b22;
 
 
@@ -12,8 +12,6 @@
 	border: 3px solid #b8860b;
 	box-shadow: 0 0 50px rgba(184, 134, 11, 0.3), inset 0 0 100px rgba(0, 0, 0, 0.5);
 	&::before {
-		content: '·';
-		position: absolute;
 		color: @color_1;
 		font-size: 20px;
 		opacity: 0.3;
@@ -21,8 +19,6 @@
 		left: 50px;
 	}
 	&::after {
-		content: '·';
-		position: absolute;
 		color: @color_1;
 		font-size: 20px;
 		opacity: 0.3;
@@ -401,6 +397,100 @@
 	border-bottom: 2px solid #b8860b;
 	padding-bottom: 8px;
 }
+.skill-radio {
+	display: none;
+}
+.skill-tabs {
+	display: flex;
+	gap: 5px;
+	margin-bottom: 15px;
+}
+.skill-tab-label {
+	flex: 1;
+	background: transparent;
+	border: 1px solid #b8860b;
+	color: @color_1;
+	padding: 5px;
+	font-family: @font_family_1;
+	font-size: 11px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: center;
+	&:hover {
+		background: rgba(184, 134, 11, 0.2);
+	}
+}
+#tab-str {
+	&:checked {
+		&~.skill-tabs {
+			label[for="tab-str"] {
+				background: #b8860b;
+				color: @color_2;
+				font-weight: bold;
+			}
+		}
+		&~.content-str {
+			display: flex;
+		}
+	}
+}
+#tab-agi {
+	&:checked {
+		&~.skill-tabs {
+			label[for="tab-agi"] {
+				background: #b8860b;
+				color: @color_2;
+				font-weight: bold;
+			}
+		}
+		&~.content-agi {
+			display: flex;
+		}
+	}
+}
+#tab-cha {
+	&:checked {
+		&~.skill-tabs {
+			label[for="tab-cha"] {
+				background: #b8860b;
+				color: @color_2;
+				font-weight: bold;
+			}
+		}
+		&~.content-cha {
+			display: flex;
+		}
+	}
+}
+#tab-edu {
+	&:checked {
+		&~.skill-tabs {
+			label[for="tab-edu"] {
+				background: #b8860b;
+				color: @color_2;
+				font-weight: bold;
+			}
+		}
+		&~.content-edu {
+			display: flex;
+		}
+	}
+}
+
+#tab-ins {
+	&:checked {
+		&~.skill-tabs {
+			label[for="tab-ins"] {
+				background: #b8860b;
+				color: @color_2;
+				font-weight: bold;
+			}
+		}
+		&~.content-ins {
+			display: flex;
+		}
+	}
+} 
 .skills-label {
 	font-weight: bold;
 }
@@ -408,7 +498,7 @@
 	font-weight: bold;
 }
 .skills-list {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	gap: 6px;
 }

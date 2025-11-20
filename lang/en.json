@@ -292,7 +292,13 @@
       "Temporary": "Temporary Effects",
       "Passive": "Passive Effects",
       "Inactive": "Inactive Effects"
-    }
+    },
+    "Skills": {
+      "Agi": {
+        "Stealth": "Stealth",
+        "Sleight Of Hand": "Sleight Of Hand"
+      }
+    } 
   },
 
   "TYPES": {
