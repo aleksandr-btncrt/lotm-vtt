@@ -296,7 +296,15 @@
     "Skills": {
       "Agi": {
         "Stealth": "Stealth",
-        "Sleight Of Hand": "Sleight Of Hand"
+        "Sleight-Of-Hand": "Sleight Of Hand",
+        "Swim": "Swim",
+        "Shoot": "Shoot",
+        "Gunnery":"Gunnery",
+        "Locksmith": "Locksmith",
+        "Drive": "Drive",
+        "Heavy-Machinery": "Heavy-Machinery",
+        "Dodge": "Dodge",
+        "Extra-Dodge": "Extra Dodge"
       }
     } 
   },
