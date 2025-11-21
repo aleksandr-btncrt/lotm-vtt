@@ -58,6 +58,10 @@ Handlebars.registerHelper('capitalize', function (str) {
   return String(str).charAt(0).toUpperCase()+String(str).slice(1);
 })
 
+Handlebars.registerHelper('toUpperCase', function(str){
+  return str.toUpperCase();
+})
+
 
 /* -------------------------------------------- */
 /*  Hotbar Macros                               */
