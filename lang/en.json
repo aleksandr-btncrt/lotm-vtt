@@ -335,6 +335,17 @@
         "Knowledge": "Knowledge",
         "Mystical-language": "Mystical language",
         "Common-phrases": "Common phrases"
+      },
+      "Ins": {
+        "Listening": "Listening",
+        "Investigation": "Investigation",
+        "Mechanical-Repair": "Mechanical Repair",
+        "Occultism": "Occultism",
+        "Psychology": "Psychology",
+        "Cooking": "Cooking",
+        "Art": "Art",
+        "Tracking": "Tracking",
+        "Read-lips": "Read lips"
       }
     } 
   },
