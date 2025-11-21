@@ -274,7 +274,7 @@
       "Lck": { "long": "Luck", "abbr": "lck" },
       "Cha": { "long": "Charisma", "abbr": "cha" },
       "Ins": { "long": "Inspiration", "abbr": "ins"},
-      "Edu": { "long": "Education", "abbr": "Edu"}
+      "Edu": { "long": "Education", "abbr": "edu"}
     },
     "SheetLabels": {
       "Actor": "LOTM Actor Sheet",
@@ -313,6 +313,16 @@
         "Jump": "Jump",
         "Beast-Taming": "Beast Taming",
         "Fighting": "Fighting"
+      },
+      "Cha": {
+        "Please": "Please",
+        "Deception": "Deception",
+        "Speech": "Speech",
+        "Persuasion": "Persuasion",
+        "Psychoanalysis": "Psychoanalysis",
+        "Act": "Act",
+        "Disguise": "Disguise",
+        "Credibility": "Credibility"
       }
     } 
   },
