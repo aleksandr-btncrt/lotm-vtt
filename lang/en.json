@@ -323,6 +323,18 @@
         "Act": "Act",
         "Disguise": "Disguise",
         "Credibility": "Credibility"
+      },
+      "Edu": {
+        "Pilot": "Pilot",
+        "Trade": "Trade",
+        "Medicine": "Medicine",
+        "Library?": "Library?",
+        "Write": "Write",
+        "Blast?": "Blast?",
+        "Survive": "Survive",
+        "Knowledge": "Knowledge",
+        "Mystical-language": "Mystical language",
+        "Common-phrases": "Common phrases"
       }
     } 
   },
