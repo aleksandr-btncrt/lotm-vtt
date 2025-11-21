@@ -305,6 +305,14 @@
         "Heavy-Machinery": "Heavy-Machinery",
         "Dodge": "Dodge",
         "Extra-Dodge": "Extra Dodge"
+      },
+      "Str": {
+        "Climb": "Climb",
+        "Throwing": "Throwing",
+        "Intimidation": "Intimidation",
+        "Jump": "Jump",
+        "Beast-Taming": "Beast Taming",
+        "Fighting": "Fighting"
       }
     } 
   },
