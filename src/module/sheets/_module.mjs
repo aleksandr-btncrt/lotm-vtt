@@ -1,1 +1,0 @@
-export * as Actor from "./actor-sheet-v2.mjs"

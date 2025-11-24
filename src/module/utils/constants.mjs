@@ -11,3 +11,4 @@ export const Abilities = [
   "Ins",
   "Edu",
 ]
+export const BASE_HEALTH = 10;
