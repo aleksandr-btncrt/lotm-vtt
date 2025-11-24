@@ -1,6 +1,6 @@
 
 const { TypeDataModel } = foundry.abstract
-const { StringField, SchemaField, NumberField, BooleanField } = foundry.data.fields
+const { StringField, ArrayField, SchemaField, NumberField, BooleanField } = foundry.data.fields
 
 export default class LotmActorModelV2 extends TypeDataModel {
 
@@ -10,7 +10,7 @@ export default class LotmActorModelV2 extends TypeDataModel {
   /** @inheritdoc */
   static defineSchema() {
     return {
-      editable: new BooleanField({initial: false}),
+      editable: new BooleanField({ initial: false }),
       occupation: new SchemaField({
         value: new StringField({ initial: "" })
       }),
@@ -21,10 +21,8 @@ export default class LotmActorModelV2 extends TypeDataModel {
       abilities: new SchemaField(Object.keys(CONFIG.LOTM.abilities).reduce((obj, ability) => {
         obj[ability] = new SchemaField({
           value: new NumberField({ initial: 0, min: 0, max: 6, step: 1 }),
-          boost: new SchemaField({
-            value: new NumberField({ initial: 0 })
-          })
-        });
+          boost: new ArrayField(new NumberField())
+        })
         return obj;
       }, {})),
       isBeyonder: new SchemaField({

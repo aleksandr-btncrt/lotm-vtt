@@ -29,7 +29,11 @@ export const createTemplateParts = (type)=>{
       template: systemPath(`templates/${type}/main.hbs`)
     },
     bottom: {
-      template: systemPath(`templates/${type}/bottom.hbs`)
+      template: systemPath(`templates/${type}/bottom.hbs`),
+      templates: [
+        systemPath(`templates/${type}/parts/actor-skills.hbs`)
+      ],
+      scrolleable: [""]
     }
   }
 }
