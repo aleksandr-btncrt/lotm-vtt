@@ -1,4 +1,16 @@
 {
+  "hotReload": {
+    "extensions": [
+      "css",
+      "hbs",
+      "json"
+    ],
+    "paths": [
+      "lotm.css",
+      "templates",
+      "lang"
+    ]
+  },
   "id": "lotm",
   "title": "Lord of the Mysteries TTRPG",
   "description": "A system for playing the first edition of Lord of the Mysteries.",
@@ -45,11 +57,31 @@
   "documentTypes": {
     "Actor": {
       "character": {
-        "htmlFields": ["biography"],
-        "stringFields": ["occupation", "path", "gender"],
+        "htmlFields": [
+          "biography"
+        ],
+        "stringFields": [
+          "occupation",
+          "path",
+          "gender"
+        ],
         "filePathFields": {
-          "crest": ["IMAGE"]
+          "crest": [
+            "IMAGE"
+          ]
         }
+      }
+    },
+    "Item": {
+      "consumable": {
+        "filePathFields": {
+          "activities.*.img": [
+            "IMAGE"
+          ]
+        },
+        "htmlFields": [
+          "description"
+        ]
       }
     }
   }

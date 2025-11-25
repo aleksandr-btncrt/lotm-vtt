@@ -1,5 +1,4 @@
-import { BASE_HEALTH } from "../utils/constants.mjs";
-import { createTemplateParts } from "../utils/default-options.mjs";
+import { createTemplateParts } from "../../utils/default-options.mjs";
 
 const { api, sheets } = foundry.applications;
 

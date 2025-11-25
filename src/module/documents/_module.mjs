@@ -1,1 +1,2 @@
-export { default as LOTMActorV2 } from "./actor-v2.mjs"
+export { default as ActorLotm } from "./actor.mjs";
+export { default as ItemLotm } from "./item.mjs";
