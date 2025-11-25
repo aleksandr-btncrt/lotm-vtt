@@ -2,6 +2,7 @@ import * as documents from "./src/module/documents/_module.mjs";
 import * as apps from "./src/module/applications/_module.mjs"
 import * as dataModels from "./src/module/data/_module.mjs";
 import { LOTM } from './src/module/helpers/config.mjs';
+import DragDropLotm from "./src/module/drag-drop.mjs"
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -10,20 +11,30 @@ import { LOTM } from './src/module/helpers/config.mjs';
 Hooks.once('init', function () {
   CONFIG.LOTM = LOTM;
 
-  for(const doc of Object.values(documents)){
+  for (const doc of Object.values(documents)) {
     CONFIG[doc.documentName].documentClass = doc;
+    if (dataModels.collection[`${doc.documentName}sLotm`]) {
+      CONFIG[doc.documentName].collection = dataModels.collection[`${doc.documentName}sLotm`]
+    }
+    console.log(CONFIG);
   }
 
+
   Object.assign(CONFIG.Actor.dataModels, dataModels.Actor.config);
+  Object.assign(CONFIG.Item.dataModels, dataModels.Item.config);
 
   CONFIG.Actor.defaultType = "token"
 
-  foundry.documents.collections.Actors.registerSheet("lotm", apps.Actor.LotmActorSheet, {makeDefault: true, label: "LOTM.Sheets.Labels.ActorSheet"})
 
-  
+  foundry.documents.collections.Actors.registerSheet("lotm", apps.Actor.LotmActorSheet, { makeDefault: true, label: "LOTM.Sheets.Labels.ActorSheet" })
+  foundry.documents.collections.Items.registerSheet("lotm", apps.Item.LotmItemSheet, { label: "LOTM.Sheets.Label.ItemSheet" })
+
+  CONFIG.ux.DragDrop = DragDropLotm
+
+
 });
 
-Hooks.once("i18nInit", ()=>{
+Hooks.once("i18nInit", () => {
   localizeHelper(CONFIG.LOTM)
 })
 
@@ -55,10 +66,10 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 });
 
 Handlebars.registerHelper('capitalize', function (str) {
-  return String(str).charAt(0).toUpperCase()+String(str).slice(1);
+  return String(str).charAt(0).toUpperCase() + String(str).slice(1);
 })
 
-Handlebars.registerHelper('toUpperCase', function(str){
+Handlebars.registerHelper('toUpperCase', function (str) {
   return str.toUpperCase();
 })
 

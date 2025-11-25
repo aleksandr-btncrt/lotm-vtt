@@ -1,6 +1,6 @@
 const { Actor } = foundry.documents;
 
-export default class LOTMActorV2 extends Actor {
+export default class ActorLotm extends Actor {
 
   prepareDerivedData(){
     super.prepareDerivedData()
