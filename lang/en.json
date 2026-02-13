@@ -356,7 +356,8 @@
     },
     "Item": {
       "item": "Item",
-      "consumable": "Consumable Type"
+      "consumable": "Consumable Type",
+      "class": "Class"
     }
   }
 }

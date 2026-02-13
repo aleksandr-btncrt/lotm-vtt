@@ -3,7 +3,7 @@ export default function DependentDocumentMixin(Base){
     /** @inheritDoc */
     prepareData(){
       super.prepareData();
-      if(this.flags?.lotm.dependentOn && this.uuid){
+      if(this.flags?.lotm?.dependentOn && this.uuid){
 
       }
     }

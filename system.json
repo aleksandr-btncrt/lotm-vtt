@@ -82,6 +82,11 @@
         "htmlFields": [
           "description"
         ]
+      },
+      "class": {
+        "htmlFields": [
+          "description"
+        ]
       }
     }
   }
