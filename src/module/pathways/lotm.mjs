@@ -9,6 +9,9 @@ export const lordOfMysteries = paths.reduce((pv, cv)=>{
   pv[`${dashedKey.toLowerCase()}`] = {
     name: `${cv} Pathway`,
     key: dashedKey,
+    // Sequences from 9 (lowest) to 0 (highest)
+    sequences: generatePathwayTree(dashedKey),
+    // Keep tree for backwards compatibility if needed
     tree: generatePathwayTree(dashedKey)
   }
   return pv;

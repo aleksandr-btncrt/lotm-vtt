@@ -1,5 +1,5 @@
-{{! This template is a fallback for when items don't have more specific templates. }}
-{{! Generally, you'll want to make more specific templates when possible. }}
+{{! General item sheet template that uses partials based on item type }}
+{{! This template provides the common structure, while type-specific partials handle unique content }}
 <form class='{{cssClass}}' autocomplete='off'>
   <header class='sheet-header'>
     <img
@@ -13,8 +13,13 @@
           name='name'
           type='text'
           value='{{item.name}}'
-          placeholder='Name'
+          placeholder='{{#if (eq item.type "pathway")}}Pathway Name{{else}}Name{{/if}}'
         /></h1>
+      
+      {{! Load type-specific header content }}
+      {{#if (eq item.type "pathway")}}
+        {{> "systems/lotm/templates/item/parts/item-pathway-header.hbs"}}
+      {{/if}}
     </div>
   </header>
 
@@ -41,7 +46,13 @@
 
     {{! Attributes Tab }}
     <div class='tab attributes' data-group='primary' data-tab='attributes'>
-      {{! As you add new fields, add them in here! }}
+      {{! Load type-specific attribute content }}
+      {{#if (eq item.type "pathway")}}
+        {{> "systems/lotm/templates/item/parts/item-pathway-content.hbs"}}
+      {{else}}
+        {{! Default fallback for items without specific partials }}
+        <p class='hint'>No specific attributes defined for this item type.</p>
+      {{/if}}
     </div>
   </section>
 </form>

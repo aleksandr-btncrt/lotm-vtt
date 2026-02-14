@@ -542,3 +542,144 @@
 	font-size: 24px;
 	background: rgba(0, 0, 0, 0.5);
 }
+
+// Pathway Display Box Styles for Character Sheet
+.character-sheet {
+	.pathway-display-box {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		padding: 15px;
+		background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%);
+		border: 2px solid @color_1;
+		border-radius: 8px;
+		margin-bottom: 20px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(184, 134, 11, 0.1);
+	}
+
+	.pathway-image-container {
+		flex: 0 0 150px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.pathway-image {
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			border: 3px solid @color_1;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+			transition: transform 0.2s ease;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.pathway-info {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 12px;
+
+		.pathway-name {
+			margin: 0;
+			font-size: 24px;
+			font-weight: bold;
+			color: @color_1;
+			font-family: "Modesto Condensed", "Palatino Linotype", serif;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	.current-sequence-display {
+		display: flex;
+		align-items: center;
+	}
+
+	.sequence-badge {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 4px;
+		padding: 12px 20px;
+		background: linear-gradient(135deg, rgba(27, 27, 35, 0.9) 0%, rgba(13, 27, 42, 0.9) 100%);
+		border: 2px solid @color_1;
+		border-radius: 6px;
+		box-shadow: 0 2px 8px rgba(184, 134, 11, 0.4);
+
+		.sequence-label {
+			font-size: 14px;
+			font-weight: bold;
+			color: @color_1;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.sequence-name-text {
+			font-size: 18px;
+			color: #ffffff;
+			font-weight: 600;
+		}
+
+		&.rank-divine {
+			border-color: #9370DB;
+			box-shadow: 0 2px 8px rgba(147, 112, 219, 0.5);
+
+			.sequence-label {
+				color: #9370DB;
+			}
+		}
+
+		&.rank-high {
+			border-color: #FFD700;
+			box-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
+
+			.sequence-label {
+				color: #FFD700;
+			}
+		}
+
+		&.rank-mid {
+			border-color: #87CEEB;
+			box-shadow: 0 2px 8px rgba(135, 206, 235, 0.5);
+
+			.sequence-label {
+				color: #87CEEB;
+			}
+		}
+
+		&.rank-low {
+			border-color: #90EE90;
+			box-shadow: 0 2px 8px rgba(144, 238, 144, 0.5);
+
+			.sequence-label {
+				color: #90EE90;
+			}
+		}
+	}
+
+	.pathway-empty-state {
+		padding: 40px 20px;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.2);
+		border: 2px dashed #7a7971;
+		border-radius: 8px;
+		margin-bottom: 20px;
+
+		p {
+			margin: 0;
+			font-size: 16px;
+			color: @color_1;
+			font-style: italic;
+		}
+	}
+
+	.pathway-controls {
+		margin-bottom: 20px;
+	}
+}

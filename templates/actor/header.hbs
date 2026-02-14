@@ -15,11 +15,15 @@
   <h1 class="character-name">{{actor.name}}</h1>
   {{#if actor.system.isBeyonder.value}}
     {{#if actor.system.editable}}
-    <select name="system.path.name">
-      {{selectOptions config.LOTM.pathways selected=system.path.name valueAttr="key" labelAttr="name"}}
+    <select name="system.pathway.name">
+      {{selectOptions config.LOTM.pathways selected=system.pathway.name valueAttr="key" labelAttr="name"}}
       </select>
     {{else}}
-    <p class="character-class">{{capitalize system.path.name}} Pathway</p>
+    {{#if system.pathway.name}}
+      {{#with (lookup config.LOTM.pathways system.pathway.name)}}
+        <p class="character-class">{{name}}</p>
+      {{/with}}
+    {{/if}}
     {{/if}}
   {{/if}}
 
