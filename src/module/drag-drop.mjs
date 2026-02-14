@@ -7,7 +7,7 @@ export default class DragDropLotm extends DragDrop {
 
   async _handleDragStart(event){
     await this.callback(event, "dragstart");
-    if(event.dataTransfer.item.length){
+    if(event?.dataTransfer?.items?.length){
       event.stopPropagation();
       let data = event.dataTransfer.getData("application/json") || event.dataTransfer.getData("text/plain");
       try { data = JSON.parse(data); } catch(err){}

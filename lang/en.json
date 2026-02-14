@@ -347,7 +347,31 @@
         "Tracking": "Tracking",
         "Read-lips": "Read lips"
       }
-    } 
+    },
+    "Pathway": {
+      "Pathway": "Pathway",
+      "PathwayHint": "Select the beyonder pathway",
+      "Sequence": "Sequence",
+      "SequenceHint": "Sequence number (9 is lowest, 0 is divine)",
+      "Description": "Description",
+      "NoPathway": "No Pathway Selected",
+      "NoSequence": "No Sequence",
+      "Rank": {
+        "Divine": "Divine",
+        "High": "High Rank",
+        "Mid": "Mid Rank",
+        "Low": "Low Rank"
+      }
+    },
+    "Consumable": {
+      "DefaultType": "Consumable",
+      "Type": {
+        "Potion": "Potion",
+        "Scroll": "Scroll",
+        "Charm": "Charm",
+        "Other": "Other"
+      }
+    }
   },
   "TYPES": {
     "Actor": {
@@ -357,7 +381,7 @@
     "Item": {
       "item": "Item",
       "consumable": "Consumable Type",
-      "class": "Class"
+      "pathway": "Pathway"
     }
   }
 }

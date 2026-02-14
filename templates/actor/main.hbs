@@ -41,11 +41,20 @@
     </div>
     <div class="sequence-info">
       {{#if editable}}
-        <select name="system.path.sequence">
-          {{selectOptions selectedPath selected=path.sequence valueAttr="name" labelAttr="name"}}
+        <select name="system.pathway.sequence">
+          {{selectOptions selectedPathway selected=pathway.sequence valueAttr="sequence" labelAttr="name"}}
         </select>
       {{else}}
-        <div class="sequence-number">{{path.sequence}}</div>
+        {{#if pathway.name}}
+          {{#with (lookup config.LOTM.pathways pathway.name)}}
+            {{#with (lookup sequences ../pathway.sequence)}}
+              <div class="sequence-name">{{localize name}}</div>
+              <div class="sequence-number">Sequence {{../pathway.sequence}}</div>
+            {{/with}}
+          {{/with}}
+        {{else}}
+          <div class="sequence-number">{{pathway.sequence}}</div>
+        {{/if}}
       {{/if}}
     </div>
   </div>

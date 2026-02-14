@@ -16,5 +16,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/lotm/templates/actor/parts/actor-character.hbs',
     // Item partials
     'systems/lotm/templates/item/parts/item-effects.hbs',
+    'systems/lotm/templates/item/parts/item-pathway-header.hbs',
+    'systems/lotm/templates/item/parts/item-pathway-content.hbs',
   ]);
 };

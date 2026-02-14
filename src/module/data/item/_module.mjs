@@ -1,9 +1,9 @@
 import ConsumableData from "./consumable.mjs";
-import ClassData from "./class.mjs";
+import PathwayData from "./pathway.mjs";
 
 const config = {
   consumeable: ConsumableData,
-  class: ClassData,
+  pathway: PathwayData,
 }
 
-export { ConsumableData, ClassData, config }
+export { ConsumableData, PathwayData, config }

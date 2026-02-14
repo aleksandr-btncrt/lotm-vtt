@@ -1,29 +1,68 @@
-<div class="grid">
+<div class="pathway-container">
+  {{#if system.pathway.name}}
+    <div class="pathway-display-box">
+      <div class="pathway-image-container">
+        <img src="systems/lotm/assets/pathways/{{system.pathway.name}}.webp" title="{{currentPathway.name}}" class="pathway-image" alt="{{currentPathway.name}}">
+      </div>
+      <div class="pathway-info">
+        <h3 class="pathway-name">{{currentPathway.name}}</h3>
+        {{#if system.pathway.sequence}}
+          <div class="current-sequence-display">
+            {{#each allSequences}}
+              {{#if isCurrent}}
+                <div class="sequence-badge rank-{{rank}}">
+                  <span class="sequence-label">Sequence {{number}}</span>
+                  <span class="sequence-name-text">{{name}}</span>
+                </div>
+              {{/if}}
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{else}}
+    <div class="pathway-empty-state">
+      <p>Drag and drop a Class item here to set your pathway</p>
+    </div>
+  {{/if}}
 
-  <div class="resources grid grid-3col">
+  <div class="pathway-controls grid grid-2col">
     <div class="resource flex-group-center">
+      <label for="system.pathway.name" class="resource-label">Pathway</label>
       <div class="resource-content flexrow flex-center flex-between">
-        <img src="systems/lotm/assets/pathways/{{system.path.value}}.webp" title="{{system.path.value}}">
-        <div>
-          {{system.grade.value}}
-        </div>
-      </div>
-    </div>
-    <div class="resource flex-group-center">
-      <label for="system.path.value" class="resource-label">Path</label>
-      <div class="resource-content flexrow flex-center flex-between">
-        <select name="system.path.value">
-          {{selectOptions config.pathways selected=system.path.value valueAttr="key" labelAttr="name"}}
+        <select name="system.pathway.name">
+          <option value="">-- Select Pathway --</option>
+          {{#each pathwayOptions}}
+            <option value="{{key}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+          {{/each}}
         </select>
       </div>
     </div>
+    
     <div class="resource flex-group-center">
-      <label for="system.sequence.value" class="resource-label">Sequence</label>
+      <label for="system.pathway.sequence" class="resource-label">Current Sequence</label>
       <div class="resource-content flexrow flex-center flex-between">
-        <select name="system.sequence.value">
-          {{selectOptions config.sequences selected=system.sequence.value valueAttr="key" labelAttr="name"}}
-        </select>
+        <input type="number" name="system.pathway.sequence" value="{{system.pathway.sequence}}" min="0" max="9" step="1">
       </div>
     </div>
   </div>
+
+  {{#if allSequences}}
+    <div class="pathway-sequences">
+      <h3>Sequence Progression (9 → 0)</h3>
+      <div class="sequence-list">
+        {{#each allSequences}}
+          <div class="sequence-item {{#if isCurrent}}current{{/if}} rank-{{rank}}">
+            <span class="sequence-number">Seq {{number}}</span>
+            <span class="sequence-name">{{name}}</span>
+            <span class="sequence-rank badge {{rank}}">{{rank}}</span>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{else if system.pathway.name}}
+    <div class="pathway-hint">
+      <p>Select a pathway to see all sequences</p>
+    </div>
+  {{/if}}
 </div>

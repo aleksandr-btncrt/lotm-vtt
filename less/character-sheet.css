@@ -499,3 +499,120 @@
   font-size: 24px;
   background: rgba(0, 0, 0, 0.5);
 }
+.character-sheet .pathway-display-box {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%);
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(184, 134, 11, 0.1);
+}
+.character-sheet .pathway-image-container {
+  flex: 0 0 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.character-sheet .pathway-image-container .pathway-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #b8860b;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+.character-sheet .pathway-image-container .pathway-image:hover {
+  transform: scale(1.05);
+}
+.character-sheet .pathway-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.character-sheet .pathway-info .pathway-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #b8860b;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.character-sheet .current-sequence-display {
+  display: flex;
+  align-items: center;
+}
+.character-sheet .sequence-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(27, 27, 35, 0.9) 0%, rgba(13, 27, 42, 0.9) 100%);
+  border: 2px solid #b8860b;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.4);
+}
+.character-sheet .sequence-badge .sequence-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.character-sheet .sequence-badge .sequence-name-text {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+}
+.character-sheet .sequence-badge.rank-divine {
+  border-color: #9370DB;
+  box-shadow: 0 2px 8px rgba(147, 112, 219, 0.5);
+}
+.character-sheet .sequence-badge.rank-divine .sequence-label {
+  color: #9370DB;
+}
+.character-sheet .sequence-badge.rank-high {
+  border-color: #FFD700;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
+}
+.character-sheet .sequence-badge.rank-high .sequence-label {
+  color: #FFD700;
+}
+.character-sheet .sequence-badge.rank-mid {
+  border-color: #87CEEB;
+  box-shadow: 0 2px 8px rgba(135, 206, 235, 0.5);
+}
+.character-sheet .sequence-badge.rank-mid .sequence-label {
+  color: #87CEEB;
+}
+.character-sheet .sequence-badge.rank-low {
+  border-color: #90EE90;
+  box-shadow: 0 2px 8px rgba(144, 238, 144, 0.5);
+}
+.character-sheet .sequence-badge.rank-low .sequence-label {
+  color: #90EE90;
+}
+.character-sheet .pathway-empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px dashed #7a7971;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.character-sheet .pathway-empty-state p {
+  margin: 0;
+  font-size: 16px;
+  color: #b8860b;
+  font-style: italic;
+}
+.character-sheet .pathway-controls {
+  margin-bottom: 20px;
+}
