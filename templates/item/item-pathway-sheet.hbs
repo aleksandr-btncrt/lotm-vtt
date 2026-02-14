@@ -1,0 +1,97 @@
+<header class='sheet-header'>
+  <img
+    class='profile-img'
+    src='{{item.img}}'
+    data-edit='img'
+    title='{{item.name}}'
+  />
+  <div class='header-fields'>
+    <h1 class='charname'><input
+        name='name'
+        type='text'
+        value='{{item.name}}'
+        placeholder='Pathway Name'
+      /></h1>
+    <div class='grid grid-2col'>
+      <div class='resource'>
+        <label class='resource-label'>Pathway</label>
+        <select name='system.pathway'>
+          <option value=''>-- Select Pathway --</option>
+          {{#each pathwayOptions}}
+            <option value='{{value}}' {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Sequence (9=Lowest → 0=Divine)</label>
+        <select name='system.sequence' data-dtype='Number'>
+          {{#each sequenceOptions}}
+            <option value='{{value}}' {{#if selected}}selected{{/if}} {{#if disabled}}disabled{{/if}}>
+              {{label}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    {{#if labels.fullTitle}}
+      <div class='resource'>
+        <span class='sequence-title'>{{labels.fullTitle}}</span>
+        <span class='sequence-rank badge {{labels.rank}}'>{{labels.rank}}</span>
+      </div>
+    {{/if}}
+  </div>
+</header>
+
+{{! Sheet Tab Navigation }}
+<nav class='sheet-tabs tabs' data-group='primary'>
+  <a class='item' data-tab='description'>Description</a>
+  <a class='item' data-tab='attributes'>Attributes</a>
+</nav>
+
+{{! Sheet Body }}
+<section class='sheet-body'>
+
+  {{! Description Tab }}
+  <div class='tab' data-group='primary' data-tab='description'>
+    {{! Editors must receive enriched text data from getData to properly handle rolls }}
+    {{editor
+      enrichedDescription
+      target='system.description'
+      engine='prosemirror'
+      button=true
+      editable=editable
+    }}
+  </div>
+
+  {{! Attributes Tab }}
+  <div class='tab attributes' data-group='primary' data-tab='attributes'>
+    <h3>Pathway Information</h3>
+    
+    <div class='form-group'>
+      <label class='resource-label'>Pathway</label>
+      <select name='system.pathway' class='pathway-select'>
+        <option value=''>-- Select Pathway --</option>
+        {{#each pathwayOptions}}
+          <option value='{{value}}' {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+      </select>
+      {{#if currentPathway}}
+        <p class='hint'>{{currentPathway.name}}</p>
+      {{/if}}
+    </div>
+
+    {{#if allSequences}}
+      <div class='form-group sequence-hierarchy'>
+        <div class='sequence-list'>
+          {{#each allSequences}}
+            <div class='sequence-item {{#if isCurrent}}current{{/if}} rank-{{rank}}'>
+              <span class='sequence-number'>Seq {{number}}</span>
+              <span class='sequence-name'>{{name}}</span>
+              <span class='sequence-rank badge {{rank}}'>{{rank}}</span>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</section>
