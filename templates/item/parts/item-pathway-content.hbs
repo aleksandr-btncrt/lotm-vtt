@@ -1,0 +1,31 @@
+{{! Partial for pathway (pathway/sequence) item content }}
+{{! This partial is included in item-sheet.hbs when item.type is "pathway" }}
+
+<h3>Pathway Information</h3>
+
+<div class='form-group'>
+  <label class='resource-label'>Pathway</label>
+  <select name='system.pathway' class='pathway-select'>
+    <option value=''>-- Select Pathway --</option>
+    {{#each pathwayOptions}}
+      <option value='{{value}}' {{#if selected}}selected{{/if}}>{{label}}</option>
+    {{/each}}
+  </select>
+  {{#if currentPathway}}
+    <p class='hint'>{{currentPathway.name}}</p>
+  {{/if}}
+</div>
+
+{{#if allSequences}}
+  <div class='form-group sequence-hierarchy'>
+    <div class='sequence-list'>
+      {{#each allSequences}}
+        <div class='sequence-item {{#if isCurrent}}current{{/if}} rank-{{rank}}'>
+          <span class='sequence-number'>Seq {{number}}</span>
+          <span class='sequence-name'>{{name}}</span>
+          <span class='sequence-rank badge {{rank}}'>{{rank}}</span>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/if}}
